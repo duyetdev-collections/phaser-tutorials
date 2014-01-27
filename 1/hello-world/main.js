@@ -4,11 +4,11 @@
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game_div');
 
 // An array to store the different states of our game (play, menu, credits, etc.)
-Game = {};
+State = {};
 
 // Let's define our first state: play
-Game.Play = function() { };
-Game.Play.prototype = {
+State.Play = function(game) { };
+State.Play.prototype = {
 
 	preload: function() {
 		// Everything in this function will be executed at the beginning. That’s where we usually load the game’s assets (images, sounds, etc.)
@@ -35,5 +35,5 @@ Game.Play.prototype = {
 }
 
 // And we tell Phaser to add and start our play state
-game.state.add('Play', Game.Play);
+game.state.add('Play', State.Play);
 game.state.start('Play');
