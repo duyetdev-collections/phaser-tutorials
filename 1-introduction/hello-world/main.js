@@ -1,7 +1,7 @@
 
 // This initialise Phaser
 // Parameters: width of the game, height of the game, how to render the game, the name of the div in the html that will contain the game
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game_div');
+var game = new Phaser.Game(500, 600, Phaser.AUTO, 'game_div');
 
 // An array to store the different states of our game (play, menu, credits, etc.)
 var game_state = {};
@@ -23,7 +23,7 @@ game_state.play.prototype = {
 
 		// Display a sprite on the screen
 		// Parameters: x position, y position, name of the sprite
-		hello_sprite = game.add.sprite(200, 300, 'hello');
+		hello_sprite = game.add.sprite(250, 300, 'hello');
 	},
 	   
 	update: function() {
