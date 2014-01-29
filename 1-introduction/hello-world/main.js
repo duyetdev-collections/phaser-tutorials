@@ -1,12 +1,11 @@
-
-// This initialise Phaser
+// We start by initializing Phaser
 // Parameters: width of the game, height of the game, how to render the game, the name of the div in the html that will contain the game
 var game = new Phaser.Game(500, 600, Phaser.AUTO, 'game_div');
 
-// An array to store the different states of our game. A state is a specific scene of a game like a menu, a game over screen, etc.
+// This is an array to store the different states of our game. A state is a specific scene of a game like a menu, a game over screen, etc.
 var game_state = {};
 
-// Let's define our first state. I'll call it 'main' since we only have one.
+// And now we define our first and only state, I'll call it 'main' 
 game_state.main = function(game) { };
 game_state.main.prototype = {
 
