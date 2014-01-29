@@ -3,23 +3,23 @@
 // Parameters: width of the game, height of the game, how to render the game, the name of the div in the html that will contain the game
 var game = new Phaser.Game(500, 600, Phaser.AUTO, 'game_div');
 
-// An array to store the different states of our game (play, menu, credits, etc.)
+// An array to store the different states of our game. A state is a specific scene of a game like a menu, a game over screen, etc.
 var game_state = {};
 
-// Let's define our first state: play
-game_state.play = function(game) { };
-game_state.play.prototype = {
+// Let's define our first state. I'll call it 'main' since we only have one.
+game_state.main = function(game) { };
+game_state.main.prototype = {
 
 	preload: function() {
-		// Everything in this function will be executed at the beginning. That’s where we usually load the game’s assets (images, sounds, etc.)
-
+		// Everything in this function will be executed at the beginning. That’s where we usually load the
+		
 		// Load a sprite in the game
 		// Parameters: name of the image, path to the image
 		game.load.image('hello', 'assets/hello.png');
 	},
 
 	create: function() { 
-		// This function will be called after the preload function. Here we set up the game: place sprites, add labels, etc.
+		// This function will be called after the preload function. Here we set up the game, display sprites, add labels, etc.
 
 		// Display a sprite on the screen
 		// Parameters: x position, y position, name of the sprite
@@ -27,13 +27,13 @@ game_state.play.prototype = {
 	},
 	   
 	update: function() {
-		// This is where you will spend the most of your time. This function is called 60 times per seconds to update the state of your game.
+		// This is where we will spend the most of our time. This function is called 60 times per second to update the game.
 
 		// Increase the angle of the sprite by one
 		hello_sprite.angle += 1;
 	} 
 }
 
-// And we tell Phaser to add and start our play state
-game.state.add('play', game_state.play);
-game.state.start('play');
+// And finally we tell Phaser to add and start our 'main' state
+game.state.add('main', game_state.main);
+game.state.start('main');
