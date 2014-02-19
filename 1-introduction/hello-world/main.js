@@ -22,14 +22,14 @@ game_state.main.prototype = {
 
 		// Display a sprite on the screen
 		// Parameters: x position, y position, name of the sprite
-		hello_sprite = game.add.sprite(250, 300, 'hello');
+		this.hello_sprite = game.add.sprite(250, 300, 'hello');
 	},
 	   
 	update: function() {
 		// This is where we will spend the most of our time. This function is called 60 times per second to update the game.
 
 		// Increase the angle of the sprite by one
-		hello_sprite.angle += 1;
+		this.hello_sprite.angle += 1;
 	} 
 }
 
