@@ -73,14 +73,14 @@ game_state.main.prototype = {
         // Get the first dead pipe of our group
         var pipe = this.pipes.getFirstDead();
 
-        // Kill the pipe when it's no longer visible 
-        pipe.outOfBoundsKill = true;
-
         // Set the new position of the pipe
         pipe.reset(x, y);
 
-        // Add velocity to the pipe to make it move left
+         // Add velocity to the pipe to make it move left
         pipe.body.velocity.x = -200; 
+               
+        // Kill the pipe when it's no longer visible 
+        pipe.outOfBoundsKill = true;
     },
 
     // Add a row of 6 pipes with a hole somewhere in the middle
