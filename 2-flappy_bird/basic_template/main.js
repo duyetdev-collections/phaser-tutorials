@@ -17,7 +17,7 @@ game_state.main.prototype = {
     update: function() {
 		// Function called 60 times per second
     },
-}
+};
 
 // Add and start the 'main' state to start the game
 game.state.add('main', game_state.main);  

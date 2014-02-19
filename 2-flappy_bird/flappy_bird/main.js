@@ -94,7 +94,7 @@ game_state.main.prototype = {
         this.score += 1;
         this.label_score.content = this.score;  
     },
-}
+};
 
 // Add and start the 'main' state to start the game
 game.state.add('main', game_state.main);  
