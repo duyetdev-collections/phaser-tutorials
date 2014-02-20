@@ -2,7 +2,7 @@
 var game = new Phaser.Game(400, 490, Phaser.AUTO, 'game_div');
 var game_state = {};
 
-// Creates a new 'main' state that wil contain the game
+// Creates a new 'main' state that will contain the game
 game_state.main = function() { };  
 game_state.main.prototype = {
 
@@ -11,7 +11,7 @@ game_state.main.prototype = {
         // Change the background color of the game
         this.game.stage.backgroundColor = '#71c5cf';
 
-        // Load the bird spirte
+        // Load the bird sprite
         this.game.load.image('bird', 'assets/bird.png');  
 
         // Load the pipe sprite
@@ -60,7 +60,7 @@ game_state.main.prototype = {
     },
 
     // Restart the game
-    restart_game: function(bird, pipe) {
+    restart_game: function() {
         // Remove the timer
         this.game.time.events.remove(this.timer);
 
