@@ -39,6 +39,7 @@ game_state.main.prototype = {
         if (this.bird.inWorld == false)
             this.restart_game(); 
 
+        // Make the bird slowly rotate downward
         if (this.bird.angle < 20)
             this.bird.angle += 1;
 
@@ -52,25 +53,26 @@ game_state.main.prototype = {
 
         this.bird.body.velocity.y = -350;
 
-        // Rotate the bird
+        // Animation to rotate the bird
         this.game.add.tween(this.bird).to({angle: -20}, 100).start();
 
         // Play a jump sound
         this.jump_sound.play();
     },
 
-hit_pipe: function() {
-    // Set the alive flag to false
-    this.bird.alive = false;
+    // Dead animation when the bird hit a pipe
+    hit_pipe: function() {
+        // Set the alive flag to false
+        this.bird.alive = false;
 
-    // Prevent new pipes from apearing
-    this.game.time.events.remove(this.timer);
+        // Prevent new pipes from apearing
+        this.game.time.events.remove(this.timer);
 
-    // Go trough all the pipes, and stop their movement
-    this.pipes.forEachAlive(function(p){
-        p.body.velocity.x = 0;
-    }, this);
-},
+        // Go trough all the pipes, and stop their movement
+        this.pipes.forEachAlive(function(p){
+            p.body.velocity.x = 0;
+        }, this);
+    },
 
     restart_game: function() {
         this.game.time.events.remove(this.timer);
