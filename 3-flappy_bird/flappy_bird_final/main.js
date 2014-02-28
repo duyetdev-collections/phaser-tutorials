@@ -1,8 +1,6 @@
 var game = new Phaser.Game(400, 490, Phaser.AUTO, 'game_div');
-var game_state = {};
 
-game_state.main = function() { };  
-game_state.main.prototype = {
+var main_state = {
 
     preload: function() { 
         this.game.stage.backgroundColor = '#71c5cf';
@@ -98,5 +96,5 @@ game_state.main.prototype = {
     },
 };
 
-game.state.add('main', game_state.main);  
+game.state.add('main', main_state);  
 game.state.start('main'); 
