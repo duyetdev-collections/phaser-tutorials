@@ -60,6 +60,10 @@ var main_state = {
 
     // Dead animation when the bird hit a pipe
     hit_pipe: function() {
+        // If the bird has already hit a pipe, we have nothing to do
+        if (this.bird.alive == false)
+            return;
+
         // Set the alive flag to false
         this.bird.alive = false;
 
