@@ -30,7 +30,6 @@ var main_state = {
 
         // Add sounds to the game
         this.jump_sound = this.game.add.audio('jump');
-        this.hit_sound = this.game.add.audio('hit'); 
     },
 
     update: function() {
